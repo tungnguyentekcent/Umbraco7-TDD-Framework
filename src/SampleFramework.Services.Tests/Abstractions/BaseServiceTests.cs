@@ -14,39 +14,37 @@ namespace SampleFramework.Services.Tests.Abstractions
             UmbracoContext = GetRoutingContext("/test").UmbracoContext;
             UmbracoHelper = new UmbracoHelper(UmbracoContext);
 
-            MockUmbracoContextFactory = new Mock<IUmbracoContextFactory>();
-            MockUmbracoContextFactory.Setup(x => x.GetUmbracoContext()).Returns(UmbracoContext);
+            UmbracoContextFactoryMock = new Mock<IUmbracoContextFactory>();
+            UmbracoContextFactoryMock.Setup(x => x.GetUmbracoContext()).Returns(UmbracoContext);
 
 
-            MockUmbracoHelperFactory = new Mock<IUmbracoHelperFactory>();
-            MockUmbracoHelperFactory.Setup(x => x.GetUmbracoHelper(UmbracoContext))
+            UmbracoHelperFactoryMock = new Mock<IUmbracoHelperFactory>();
+            UmbracoHelperFactoryMock.Setup(x => x.GetUmbracoHelper(UmbracoContext))
                 .Returns(UmbracoHelper);
 
-            MockQueryFactory = new Mock<IQueryFactory>();
+            QueryFactoryMock = new Mock<IQueryFactory>();
 
-            MockPublishedContentExtensionsWrapper = new Mock<IPublishedContentExtensionsWrapper>();
+            PublishedContentExtensionsWrapperMock = new Mock<IPublishedContentExtensionsWrapper>();
 
-            MockPublishedContentExtensionsWrapperFactory = new Mock<IPublishedContentExtensionsWrapperFactory>();
-            MockPublishedContentExtensionsWrapperFactory.Setup(
+            PublishedContentExtensionsWrapperFactoryMock = new Mock<IPublishedContentExtensionsWrapperFactory>();
+            PublishedContentExtensionsWrapperFactoryMock.Setup(
                 x =>
-                    x.GetPublishedContentExtensionsWrapper(MockUmbracoContextFactory.Object,
-                        MockUmbracoHelperFactory.Object)).Returns(MockPublishedContentExtensionsWrapper.Object);
+                    x.GetPublishedContentExtensionsWrapper(UmbracoContextFactoryMock.Object,
+                        UmbracoHelperFactoryMock.Object)).Returns(PublishedContentExtensionsWrapperMock.Object);
         }
 
         protected UmbracoContext UmbracoContext { get; set; }
 
         protected UmbracoHelper UmbracoHelper { get; set; }
+        
+        protected Mock<IUmbracoHelperFactory> UmbracoHelperFactoryMock { get; set; }
 
+        protected Mock<IUmbracoContextFactory> UmbracoContextFactoryMock { get; set; }
 
+        protected Mock<IQueryFactory> QueryFactoryMock { get; set; }
 
-        protected Mock<IUmbracoHelperFactory> MockUmbracoHelperFactory { get; set; }
+        protected Mock<IPublishedContentExtensionsWrapperFactory> PublishedContentExtensionsWrapperFactoryMock { get; set; }
 
-        protected Mock<IUmbracoContextFactory> MockUmbracoContextFactory { get; set; }
-
-        protected Mock<IQueryFactory> MockQueryFactory { get; set; }
-
-        protected Mock<IPublishedContentExtensionsWrapperFactory> MockPublishedContentExtensionsWrapperFactory { get; set; }
-
-        protected Mock<IPublishedContentExtensionsWrapper> MockPublishedContentExtensionsWrapper { get; set; }
+        protected Mock<IPublishedContentExtensionsWrapper> PublishedContentExtensionsWrapperMock { get; set; }
     }
 }

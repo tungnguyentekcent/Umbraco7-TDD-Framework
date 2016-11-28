@@ -1,10 +1,11 @@
 ﻿using System.Web.Mvc;
 using NUnit.Framework;
+using SampleFramework.Domain.Models;
 using SampleFramework.Services;
+using SampleFramework.Shared.Constants;
 using SampleFramework.Web.Controllers;
 using SampleFramework.Web.Models;
 using SampleFramework.Web.Tests.Abstractions;
-using SampleFramework.Web.Tests.Stubs;
 
 namespace SampleFramework.Web.Tests
 {
@@ -21,12 +22,16 @@ namespace SampleFramework.Web.Tests
         public void Index_Get_ReturnsHomePageViewModel()
         {
             // Arrange
+            const int homePageId = 1;
 
-            var applicationService = new StubApplicationService();
-            var controller = new HomePageController(applicationService);
-            controller.MapModelService = new MapModelService();
+            var controller = new HomePageController
+            {
+                ApplicationService = ApplicationServiceMock.Object,
+                MapModelService = new MapModelService()
+            };
 
-            var homePage = applicationService.GetHomePage();
+            var homePage = new HomePage { Id = homePageId };
+            ApplicationServiceMock.Setup(x => x.GetPageModel<HomePage>(DocTypeAliases.HomePage.Alias)).Returns(homePage);
 
             var homePageViewModel = controller.MapModelService.Map<HomePageViewModel>(homePage);
 
