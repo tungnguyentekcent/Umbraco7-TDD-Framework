@@ -3039,6 +3039,10 @@
       <Project>{d3eea823-3c1f-4deb-bde9-9900d9359be4}</Project>
       <Name>SampleFramework.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SampleFramework.Shared\SampleFramework.Shared.csproj">
+      <Project>{132E8898-8CA8-4573-809E-D6889086C0FA}</Project>
+      <Name>SampleFramework.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

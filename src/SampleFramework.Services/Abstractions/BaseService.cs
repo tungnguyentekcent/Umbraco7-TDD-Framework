@@ -1,11 +1,10 @@
 ﻿using SampleFramework.Services.Interfaces;
-using umbraco.interfaces;
 
 namespace SampleFramework.Services.Abstractions
 {
     public abstract class BaseService
     {
-        private readonly IQueryFactory _queryFactory;
+        protected IQueryFactory QueryFactory { get; }
         private readonly IUmbracoContextFactory _umbracoContextFactory;
         private readonly IUmbracoHelperFactory _umbracoHelperFactory;
         private readonly IPublishedContentExtensionsWrapperFactory _publishedContentExtensionsWrapperFactory;
@@ -14,7 +13,7 @@ namespace SampleFramework.Services.Abstractions
             IUmbracoHelperFactory umbracoHelperFactory,
             IPublishedContentExtensionsWrapperFactory publishedContentExtensionsWrapperFactory)
         {
-            _queryFactory = queryFactory;
+            QueryFactory = queryFactory;
             _umbracoContextFactory = umbracoContextFactory;
             _umbracoHelperFactory = umbracoHelperFactory;
             _publishedContentExtensionsWrapperFactory = publishedContentExtensionsWrapperFactory;
@@ -24,7 +23,5 @@ namespace SampleFramework.Services.Abstractions
             =>
                 _publishedContentExtensionsWrapperFactory.GetPublishedContentExtensionsWrapper(_umbracoContextFactory,
                     _umbracoHelperFactory);
-
-        protected INode HomeNode => _queryFactory.GetHomeNode();
     }
 }

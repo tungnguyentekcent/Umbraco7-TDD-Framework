@@ -4,6 +4,8 @@ namespace SampleFramework.Services.Interfaces
 {
     public interface IQueryFactory
     {
-        INode GetHomeNode();
+        INode GetNodeByType(string docTypeAlias);
+
+        INode GetCurrentNodeWithType(string docTypeAlias);
     }
 }
