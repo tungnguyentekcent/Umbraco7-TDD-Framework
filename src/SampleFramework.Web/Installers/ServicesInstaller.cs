@@ -25,6 +25,12 @@ namespace SampleFramework.Web.Installers
             container.Register(Component.For<IMapModelService>().ImplementedBy<MapModelService>());
             container.Register(
                 Component.For<IApplicationService>().ImplementedBy<ApplicationService>().LifestylePerWebRequest());
+
+            container.Register(Component.For<IMemberServiceFactory>().ImplementedBy<MemberServiceFactory>());
+
+            container.Register(Component.For<IMembershipHelperFactory>().ImplementedBy<MembershipHelperFactory>());
+
+            container.Register(Component.For<IContentServiceFactory>().ImplementedBy<ContentServiceFactory>());
         }
     }
 }

@@ -17,4 +17,24 @@
     <div>Sort Order: @Model.SortOrder</div>
     <div>Version: @Model.Version</div>
     <div>Level: @Model.Level</div>
+
+    <h2 class="PageHeading DarkScheme">Newsletter</h2>
+
+    @if (TempData["success"] == null)
+    {
+        using (Html.BeginUmbracoForm("Subscribe", "NewsletterSurface"))
+        {
+            <label>Email adress</label>
+            <div>
+                @Html.TextBox("email", "test@test.com")
+            </div>
+            <div>
+                <input class="CommonFormBtn" type="submit" title="Submit" value="Submit"/>
+            </div>
+        }
+    }
+    else
+    {
+        <h2>Thank you very much for you subscription!</h2>
+    }
 }

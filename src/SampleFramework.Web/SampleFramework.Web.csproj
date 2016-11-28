@@ -3008,6 +3008,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\NewsletterSurfaceController.cs" />
     <Compile Include="Controllers\SiteRootController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Factories\WindsorControllerFactory.cs" />
@@ -3019,6 +3021,7 @@
     <Compile Include="Installers\ServicesInstaller.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePageViewModel.cs" />
+    <Compile Include="Models\NewsletterPageViewModel.cs" />
     <Compile Include="Models\NewsListPageViewModel.cs" />
     <Compile Include="Models\LandingPageViewModel.cs" />
     <Compile Include="Models\HomePageViewModel.cs" />
