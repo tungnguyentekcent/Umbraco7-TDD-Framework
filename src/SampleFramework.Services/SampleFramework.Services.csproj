@@ -272,6 +272,7 @@
   <ItemGroup>
     <Compile Include="ApplicationService.cs" />
     <Compile Include="Abstractions\BaseService.cs" />
+    <Compile Include="ContentSearchService.cs" />
     <Compile Include="Factories\ContentServiceFactory.cs" />
     <Compile Include="Factories\MemberServiceFactory.cs" />
     <Compile Include="Factories\MembershipHelperFactory.cs" />
