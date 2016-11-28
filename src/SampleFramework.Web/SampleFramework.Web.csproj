@@ -3009,6 +3009,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseSurfaceController.cs" />
+    <Compile Include="Controllers\BaseUmbracoApiController.cs" />
+    <Compile Include="Controllers\TransactionsApiController.cs" />
     <Compile Include="Controllers\NewsletterSurfaceController.cs" />
     <Compile Include="Controllers\SiteRootController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
