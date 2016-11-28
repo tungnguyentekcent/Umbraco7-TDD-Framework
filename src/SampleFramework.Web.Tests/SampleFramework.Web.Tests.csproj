@@ -291,9 +291,11 @@
   <ItemGroup>
     <Compile Include="Abstractions\BaseControllerTests.cs" />
     <Compile Include="Abstractions\BaseSurfaceControllerTests.cs" />
+    <Compile Include="Abstractions\BaseUmbracoApiControllerTests.cs" />
     <Compile Include="HomePageControllerTests.cs" />
     <Compile Include="NewsletterSurfaceControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionsApiControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
