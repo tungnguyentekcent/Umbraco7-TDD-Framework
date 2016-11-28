@@ -11,6 +11,7 @@
     <meta name="description" content='@Model.MetaData.MetaDescription' />
     <meta name="keywords" content='@Model.MetaData.MetaKeywords' />
     <title>@Model.MetaData.MetaTitle</title>
+    @RenderSection("head", false)
 </head>
 <body class="md-body-1">
     @RenderSection("content")

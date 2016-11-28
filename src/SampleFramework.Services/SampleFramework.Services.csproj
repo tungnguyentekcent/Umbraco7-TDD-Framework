@@ -280,6 +280,7 @@
     <Compile Include="Factories\UmbracoContextFactory.cs" />
     <Compile Include="Factories\UmbracoHelperFactory.cs" />
     <Compile Include="Interfaces\IApplicationService.cs" />
+    <Compile Include="Interfaces\IContentSearchService.cs" />
     <Compile Include="Interfaces\IContentServiceFactory.cs" />
     <Compile Include="Interfaces\IContentServiceWrapper.cs" />
     <Compile Include="Interfaces\IMemberServiceFactory.cs" />
