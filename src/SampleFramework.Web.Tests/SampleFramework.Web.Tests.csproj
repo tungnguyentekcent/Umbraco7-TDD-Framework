@@ -290,7 +290,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Abstractions\BaseControllerTests.cs" />
+    <Compile Include="Abstractions\BaseSurfaceControllerTests.cs" />
     <Compile Include="HomePageControllerTests.cs" />
+    <Compile Include="NewsletterSurfaceControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

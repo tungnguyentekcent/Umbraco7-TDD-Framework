@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using SampleFramework.Services.Interfaces;
 using SampleFramework.Shared.Constants;
-using SampleFramework.Web.Models;
 using Umbraco.Web;
 
 namespace SampleFramework.Web.Controllers
@@ -26,11 +25,6 @@ namespace SampleFramework.Web.Controllers
         public ActionResult Subscribe(string email)
         {
             const string successKey = "success";
-
-            if (!ModelState.IsValid)
-            {
-                return CurrentUmbracoPage();
-            }
             
             var newsletterFolder = ApplicationService.GetNode(DocTypeAliases.NewsletterFolder.Alias);
 

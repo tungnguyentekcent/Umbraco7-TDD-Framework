@@ -4,6 +4,7 @@ using SampleFramework.Services.Interfaces;
 using SampleFramework.Web.App_Start;
 using Umbraco.Core.Models;
 using Umbraco.Tests.TestHelpers;
+using Umbraco.Web.Routing;
 
 namespace SampleFramework.Web.Tests.Abstractions
 {
@@ -13,12 +14,14 @@ namespace SampleFramework.Web.Tests.Abstractions
 
         protected Mock<IApplicationService> ApplicationServiceMock { get; set; }
 
+        public RoutingContext RoutingContext { get; set; }
+
         [SetUp]
-        public void SetUp()
+        public virtual void SetUp()
         {
             AutoMapperConfig.RegisterAutoMapper();
 
-            GetRoutingContext("/test", 1234, setUmbracoContextCurrent: true);
+            RoutingContext = GetRoutingContext("/test", 1234, setUmbracoContextCurrent: true);
 
             ApplicationServiceMock = new Mock<IApplicationService>();
         }
