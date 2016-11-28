@@ -1,7 +1,10 @@
 ﻿namespace SampleFramework.Shared.Constants
 {
-    public static class DocTypeAliases
+    public struct DocTypeAliases
     {
-        public const string HomePage = "homePage";
+        public struct HomePage
+        {
+            public const string Alias = "homePage";
+        }
     }
 }

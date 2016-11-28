@@ -8,9 +8,15 @@ namespace SampleFramework.Services.Factories
 {
     public class QueryFactory : IQueryFactory
     {
-        public INode GetHomeNode()
+        public INode GetNodeByType(string docTypeAlias)
         {
-            return uQuery.GetNodesByType(DocTypeAliases.HomePage).FirstOrDefault();
+            return uQuery.GetNodesByType(docTypeAlias).FirstOrDefault();
+        }
+
+        public INode GetCurrentNodeWithType(string docTypeAlias)
+        {
+            var currentNode = uQuery.GetCurrentNode();
+            return currentNode.NodeTypeAlias == docTypeAlias ? currentNode : null;
         }
     }
 }

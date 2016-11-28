@@ -35,3 +35,4 @@ static/_build
 src/Feature/DocumentLibrary/code/Web.config
 src/Feature/DocumentLibrary/code/App_Config/ConnectionStrings.config.transform
 /src/Feature/DocumentLibrary/code/App_Config/ConnectionStrings.Debug.config
+Logs

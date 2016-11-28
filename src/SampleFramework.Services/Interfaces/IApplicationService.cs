@@ -4,6 +4,8 @@ namespace SampleFramework.Services.Interfaces
 {
     public interface IApplicationService
     {
-        HomePage GetHomePage();
+        T GetPageModel<T>(string docTypeAlias) where T : BasePage;
+
+        T GetModelOfCurrentPage<T>(string docTypeAlias) where T : BasePage;
     }
 }

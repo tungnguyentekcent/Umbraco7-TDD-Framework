@@ -13,15 +13,29 @@ namespace SampleFramework.Services
             : base(queryFactory, umbracoContextFactory, umbracoHelperFactory, publishedContentExtensionsWrapperFactory)
         {
         }
-
-        public HomePage GetHomePage()
+        
+        public T GetPageModel<T>(string docTypeAlias) where T : BasePage
         {
-            if (HomeNode == null)
+            var pageNode = QueryFactory.GetNodeByType(docTypeAlias);
+
+            if (pageNode == null)
             {
-                throw new NullReferenceException("Home Page is NOT available.");
+                throw new NullReferenceException($"Page with {docTypeAlias} document type is NOT available.");
             }
 
-            return PublishedContentExtensionsWrapper.As<HomePage>(HomeNode.Id);
+            return PublishedContentExtensionsWrapper.As<T>(pageNode.Id);
+        }
+
+        public T GetModelOfCurrentPage<T>(string docTypeAlias) where T : BasePage
+        {
+            var pageNode = QueryFactory.GetCurrentNodeWithType(docTypeAlias);
+
+            if (pageNode == null)
+            {
+                throw new NullReferenceException($"Document type of the current page is different from {docTypeAlias}.");
+            }
+
+            return PublishedContentExtensionsWrapper.As<T>(pageNode.Id);
         }
     }
 }
