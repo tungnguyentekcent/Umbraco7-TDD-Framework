@@ -38,3 +38,4 @@ src/Feature/DocumentLibrary/code/App_Config/ConnectionStrings.config.transform
 Logs
 .vs
 Models
+App_Data
