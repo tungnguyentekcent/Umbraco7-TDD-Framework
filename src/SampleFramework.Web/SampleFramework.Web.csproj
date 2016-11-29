@@ -3008,10 +3008,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\BaseSurfaceController.cs" />
-    <Compile Include="Controllers\BaseUmbracoApiController.cs" />
-    <Compile Include="Controllers\TransactionsApiController.cs" />
-    <Compile Include="Controllers\NewsletterSurfaceController.cs" />
+    <Compile Include="SurfaceControllers\BaseSurfaceController.cs" />
+    <Compile Include="ApiControllers\BaseUmbracoApiController.cs" />
+    <Compile Include="ApiControllers\NewsletterApiController.cs" />
+    <Compile Include="SurfaceControllers\NewsletterSurfaceController.cs" />
     <Compile Include="Controllers\SiteRootController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Factories\WindsorControllerFactory.cs" />
@@ -3061,7 +3061,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58949</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

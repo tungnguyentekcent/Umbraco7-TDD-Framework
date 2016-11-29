@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Moq;
 using SampleFramework.Services.Interfaces;
-using SampleFramework.Web.Controllers;
+using SampleFramework.Web.SurfaceControllers;
 using Umbraco.Core.Configuration.UmbracoSettings;
 using Umbraco.Core.Services;
 using Umbraco.Web;

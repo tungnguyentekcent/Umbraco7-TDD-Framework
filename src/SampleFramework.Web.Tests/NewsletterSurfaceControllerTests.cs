@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using SampleFramework.Shared.Constants;
-using SampleFramework.Web.Controllers;
+using SampleFramework.Web.SurfaceControllers;
 using SampleFramework.Web.Tests.Abstractions;
 using umbraco.interfaces;
 using Umbraco.Core.Models;
@@ -50,7 +50,7 @@ namespace SampleFramework.Web.Tests
                     x.CreateContent(submittedEmail, mockNewsletterFolderNode.Object.Id,
                         DocTypeAliases.Newsletter.Alias, 0), Times.Once);
             mockContent.Verify(x => x.SetValue(DocTypeAliases.Newsletter.Properties.Email, submittedEmail), Times.Once);
-            ContentServiceMock.Verify(x => x.Save(mockContent.Object, 0, true), Times.Once);
+            ContentServiceMock.Verify(x => x.SaveAndPublishWithStatus(mockContent.Object, 0, true), Times.Once);
         }
     }
 }

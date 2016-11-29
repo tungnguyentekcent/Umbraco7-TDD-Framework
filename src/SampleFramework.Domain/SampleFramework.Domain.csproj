@@ -275,6 +275,8 @@
     <Compile Include="Models\HomePage.cs" />
     <Compile Include="Models\MetaData.cs" />
     <Compile Include="DittoProcessors\ContentKeyProcessor.cs" />
+    <Compile Include="Models\Newsletter.cs" />
+    <Compile Include="Models\NewsletterFolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
