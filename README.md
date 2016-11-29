@@ -13,15 +13,15 @@
 - NUnit version 2.6.2: unit testing framework
 
 ### Setup:  
-1. Attach the **Databases/UmbracoTDDFramework.mdf** database to MSSQL server  
-2. Modify connection string in the **Web.config**  
+* Attach the **Databases/UmbracoTDDFramework.mdf** database to MSSQL server  
+* Modify connection string in the **Web.config**  
 ```xml
 <connectionStrings>
   <add name="umbracoDbDSN" connectionString="server=localhost;database=UmbracoTDDFramework;user id=sa;password='sa'" providerName="System.Data.SqlClient" />
 </connectionStrings>
 ```
-3. Build the solution on Visual Studio  
-4. Launch the demo website via Visual Studio (press F5) or setup your own site on IIS to view the sample Home page  
+* Build the solution on Visual Studio  
+* Launch the demo website via Visual Studio (press F5) or setup your own site on IIS to view the sample Home page  
 
 ### Login info:
 - Username: Admin
