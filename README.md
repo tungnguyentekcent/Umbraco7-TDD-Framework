@@ -11,3 +11,7 @@ Main technologies:
 - Castle Windsor version 3.3.0: Inversion of Control (Ioc) container
 - AutoMapper version 3.3.1: a convention-based object-object mapper in .NET
 - NUnit version 2.6.2: unit testing framework
+
+Login info:
+- Username: Admin
+- Password: Admin1234!
