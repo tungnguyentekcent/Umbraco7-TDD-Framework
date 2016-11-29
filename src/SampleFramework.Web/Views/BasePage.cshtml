@@ -1,0 +1,19 @@
+﻿@using SampleFramework.Web.Models
+@inherits UmbracoViewPage<BasePageViewModel>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta name="description" content='@Model.MetaData.MetaDescription' />
+    <meta name="keywords" content='@Model.MetaData.MetaKeywords' />
+    <title>@Model.MetaData.MetaTitle</title>
+    @RenderSection("head", false)
+</head>
+<body class="md-body-1">
+    @RenderSection("content")
+</body>
+</html>
