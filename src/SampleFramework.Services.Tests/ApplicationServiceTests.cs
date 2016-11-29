@@ -11,7 +11,7 @@ namespace SampleFramework.Services.Tests
     public class ApplicationServiceTests : BaseServiceTests
     {
         [Test]
-        public void GetPageModel_OfStubModelType_PassInDocTypeAliasOfCurrentPage_ReturnStubModelWithInfoOfCurrentPage()
+        public void GetPageModel_PassInDocTypeAliasOfCurrentPage_ReturnPageModelWithInfoOfCurrentPage()
         {
             // Arrange
             const string docTypeAlias = "testAlias";
@@ -35,7 +35,7 @@ namespace SampleFramework.Services.Tests
         }
 
         [Test]
-        public void GetPageModel_OfStubModelType_PassInDocTypeAliasNotOfCurrentPage_ShouldGetFirstNodeOfDocTypeAliasAndReturnStubModelWithInfoOfThatNode()
+        public void GetPageModel_PassInDocTypeAliasNotOfCurrentPage_ShouldGetFirstNodeOfDocTypeAliasAndReturnPageModelWithInfoOfThatNode()
         {
             // Arrange
             const string docTypeAlias = "testAlias";
@@ -63,7 +63,32 @@ namespace SampleFramework.Services.Tests
         }
 
         [Test]
-        public void GetPageModel_OfStubModelType_PassInDocumentTypeAlias_PageNodeNotExist_ThrowNullException()
+        public void GetPageModel_PassInDocTypeAlias_CurrentPageNotExist_ShouldGetFirstNodeOfDocTypeAliasAndReturnPageModelWithInfoOfThatNode()
+        {
+            // Arrange
+            const string docTypeAlias = "testAlias";
+
+            var applicationService = new ApplicationService(QueryFactoryMock.Object, UmbracoContextFactoryMock.Object,
+                UmbracoHelperFactoryMock.Object, PublishedContentExtensionsWrapperFactoryMock.Object);
+            
+            var nodeMock = new Mock<INode>();
+            nodeMock.Setup(x => x.NodeTypeAlias).Returns(docTypeAlias);
+            QueryFactoryMock.Setup(x => x.GetCurrentNode()).Returns((INode) null);
+            QueryFactoryMock.Setup(x => x.GetFirstNodeOfType(docTypeAlias)).Returns(nodeMock.Object);
+
+            var stubModel = new StubModel();
+            PublishedContentExtensionsWrapperMock.Setup(x => x.As<StubModel>(nodeMock.Object.Id)).Returns(stubModel);
+
+            // Act
+            var result = applicationService.GetPageModel<StubModel>(docTypeAlias);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(stubModel, result);
+        }
+
+        [Test]
+        public void GetPageModel_PassInDocumentTypeAlias_PageNodeNotExist_ThrowNullException()
         {
             // Arrange
             const string docTypeAlias = "testAlias";
