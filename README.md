@@ -23,6 +23,6 @@
 * Build the solution on Visual Studio  
 * Launch the demo website via Visual Studio (press F5) or setup your own site on IIS to view the sample Home page  
 
-### Login info:
+### Login info: http://YourLocalSite/umbraco
 - Username: Admin
 - Password: Admin1234!
