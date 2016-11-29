@@ -2,7 +2,7 @@
 ### A Sample Framework for Umbraco which supports:
 - DI (Dependency Injection)
 - TDD (Test-Driven Development)
-- ORM (Object-Relational Mappring)
+- ORM (Object-Relational Mapping)
 
 ### Main technologies:
 - .Net Framework version 4.5.2
@@ -21,7 +21,7 @@
 </connectionStrings>
 ```
 * Build the solution on Visual Studio  
-* Launch the demo website via Visual Studio (press F5) or setup your own site on IIS to view the sample Home page  
+* Launch the demo website via Visual Studio (press F5) or setup your own site on IIS (point to *Umbraco7-TDD-Framework/src/SampleFramework.Web* folder) to view the sample Home page  
 
 ### Login info: http://YourLocalSite/umbraco
 - Username: Admin
