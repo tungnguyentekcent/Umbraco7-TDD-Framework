@@ -43,7 +43,7 @@
     <br/>
     <br/>
     <h1>Umbraco Api Controller</h1>
-    <button onclick="javascript:transactionManager.getTransactions();">Click to get Transactions</button>
+    <button onclick="javascript: newsletterManager.getNewsletters();">Get all submitted Newsletters</button>
     <ul id="resultsList">
     </ul>
 }
@@ -53,8 +53,8 @@
     <script src="~/Scripts/jquery-2.2.3.min.js"></script>
     <script>
 
-        var TransactionManager = function(options) {
-            var getTransactions = function() {
+        var NewsletterManager = function(options) {
+            var getNewsletters = function() {
                 $.ajax({
                     type: options.requestType,
                     url: options.url,
@@ -62,21 +62,21 @@
                 }).done(function(data) {
                     console.log(data);
                     $(options.contentElement).empty();
-                    $.each(data, function(key, transaction) {
-                        $(options.contentElement).append("<li>" + transaction + "</li>");
+                    $.each(data, function(key, newsletter) {
+                        $(options.contentElement).append("<li>" + newsletter.Email + "</li>");
                     });
                 });
             }
 
             return {
-                getTransactions: getTransactions
+                getNewsletters: getNewsletters
             }
         };
 
-        var transactionManager = new TransactionManager({
+        var newsletterManager = new NewsletterManager({
             contentElement: '#resultsList',
             requestType: 'GET',
-            url: '/umbraco/api/transactionsapi/gettransactions'
+            url: '/umbraco/api/NewsletterApi/GetNewsletters'
         });
 
     </script>

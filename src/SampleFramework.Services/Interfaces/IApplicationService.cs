@@ -5,7 +5,7 @@ namespace SampleFramework.Services.Interfaces
 {
     public interface IApplicationService
     {
-        T GetPageModel<T>(string docTypeAlias) where T : BasePage;
+        T GetPageModel<T>(string docTypeAlias) where T : BaseModel;
 
         INode GetNode(string docTypeAlias);
 

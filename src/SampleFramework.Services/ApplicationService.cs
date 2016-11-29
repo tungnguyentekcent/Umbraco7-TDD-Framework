@@ -15,11 +15,11 @@ namespace SampleFramework.Services
         {
         }
         
-        public T GetPageModel<T>(string docTypeAlias) where T : BasePage
+        public T GetPageModel<T>(string docTypeAlias) where T : BaseModel
         {
             var pageNode = QueryFactory.GetCurrentNode();
 
-            if (pageNode.NodeTypeAlias != docTypeAlias)
+            if (pageNode == null || pageNode.NodeTypeAlias != docTypeAlias)
             {
                 pageNode = QueryFactory.GetFirstNodeOfType(docTypeAlias);
             }
