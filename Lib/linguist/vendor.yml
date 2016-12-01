@@ -9,6 +9,9 @@
 
 ## Vendor Conventions ##
 
+# Javascripts
+- ^.js$
+
 # Caches
 - (^|/)cache/
 
